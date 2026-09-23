@@ -1,6 +1,6 @@
-// ⚠️ এখানে তোমার TMDB API Key বসাও
-const API_KEY = 'YOUR_TMDB_API_KEY';
-const BASE = 'https://api.themoviedb.org/3';
+//  এখানে তোমার TMDB API Key বসাও
+const API_KEY = 'a107bbfc465784b710cad5b18e174feb';
+const scroll-behavior/asmoothmoviedb.org/3';
 const IMG = 'https://image.tmdb.org/t/p/w500';
 const IMG_BIG = 'https://image.tmdb.org/t/p/original';
 
