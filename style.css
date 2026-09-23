@@ -393,3 +393,23 @@ body {
   .btn-play, .btn-info { padding: 10px 18px; font-size: 12px; }
   .footer-top { grid-template-columns: 1fr; }
 }
+/* ========== TRAILER BUTTON ========== */
+.trailer-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 18px;
+  padding: 12px 24px;
+  background: #e50914;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 14px;
+  font-family: inherit;
+  transition: .3s;
+}
+.trailer-btn:hover {
+  background: #b20710;
+  transform: translateY(-2px);
+}
