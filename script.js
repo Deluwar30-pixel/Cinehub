@@ -1,6 +1,6 @@
 //  এখানে তোমার TMDB API Key বসাও
 const API_KEY = 'a107bbfc465784b710cad5b18e174feb';
-const BASE = 'https://api.themoviedb.org/3';
+const scroll-behavior/asmoothmoviedb.org/3';
 const IMG = 'https://image.tmdb.org/t/p/w500';
 const IMG_BIG = 'https://image.tmdb.org/t/p/original';
 
@@ -41,14 +41,32 @@ fetchMovies('/movie/upcoming', 'upcoming', false);
 const modal = document.getElementById('modal');
 const closeModal = document.getElementById('closeModal');
 
-function openModal(movie) {
+async function openModal(movie) {
   document.getElementById('modalImg').src = movie.backdrop_path ? IMG_BIG + movie.backdrop_path : IMG + movie.poster_path;
   document.getElementById('modalTitle').textContent = movie.title || movie.name;
   document.getElementById('modalMeta').textContent =
     `⭐ ${movie.vote_average?.toFixed(1) || 'N/A'} | 📅 ${movie.release_date || movie.first_air_date || 'N/A'}`;
   document.getElementById('modalOverview').textContent = movie.overview || 'কোনো বিবরণ নেই।';
   modal.classList.add('active');
-}
+
+  const trailerBtn = document.getElementById('trailerBtn');
+  if (trailerBtn) {
+    trailerBtn.style.display = 'none';
+    trailerBtn.href = '#';
+    try {
+      const mediaType = movie.title ? 'movie' : 'tv';
+      const res = await fetch(`${BASE}/${mediaType}/${movie.id}/videos?api_key=${API_KEY}&language=en-US`);
+      const data = await res.json();
+      const trailer = (data.results || []).find(v => v.type === 'Trailer' && v.site === 'YouTube') ||
+                      (data.results || []).find(v => v.site === 'YouTube');
+      if (trailer) {
+        trailerBtn.href = `https://www.youtube.com/watch?v=${trailer.key}`;
+        trailerBtn.style.display = 'inline-flex';
+      }
+    } catch (err) {
+      console.error('Trailer error:', err);
+    }
+  }
 
 closeModal.addEventListener('click', () => modal.classList.remove('active'));
 modal.addEventListener('click', e => { if (e.target === modal) modal.classList.remove('active'); });
@@ -119,7 +137,7 @@ const heroSlides = [
 ];
 
 const hero = document.getElementById('hero');
-let currentSlide = 0;
+let currentSlide = 0
 
 function createSlides() {
   hero.innerHTML = '';
@@ -150,4 +168,4 @@ function nextSlide() {
 }
 
 createSlides();
-setInterval(nextSlide, 5000);
+setInterval(nextSlide, 5000);    
