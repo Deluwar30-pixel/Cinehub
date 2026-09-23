@@ -36,6 +36,13 @@ fetchMovies('/trending/movie/week', 'trending', false);
 fetchMovies('/movie/top_rated', 'topRated', false);
 fetchMovies('/movie/upcoming', 'upcoming', false);
 
+// ---------- Category Sections ----------
+fetchMovies('/discover/movie?with_genres=28&sort_by=popularity.desc', 'actionMovies', false);
+fetchMovies('/discover/movie?with_genres=35&sort_by=popularity.desc', 'comedyMovies', false);
+fetchMovies('/discover/movie?with_genres=27&sort_by=popularity.desc', 'horrorMovies', false);
+fetchMovies('/discover/movie?with_genres=10749&sort_by=popularity.desc', 'romanceMovies', false);
+fetchMovies('/discover/movie?with_genres=53&sort_by=popularity.desc', 'thrillerMovies', false);
+
 // ---------- Modal ----------
 const modal = document.getElementById('modal');
 const closeModal = document.getElementById('closeModal');
