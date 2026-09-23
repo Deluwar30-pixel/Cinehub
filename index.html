@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CineHub — Watch Movies & Series</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- ============ NAVBAR ============ -->
+  <header class="navbar">
+    <div class="nav-left">
+      <div class="logo">Cine<span>Hub</span></div>
+      <nav class="menu">
+        <a href="#" class="active">MOVIES</a>
+        <a href="#">TV</a>
+        <a href="#">DRAMA</a>
+        <a href="#">SERIES</a>
+        <a href="#">SPORTS</a>
+        <a href="#">SHOWS</a>
+        <a href="#">COMING SOON <span class="new-badge">New</span></a>
+      </nav>
+    </div>
+
+    <div class="nav-right">
+      <div class="search-box">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" id="searchInput" placeholder="Search movies...">
+      </div>
+      <a href="#" class="subscribe">SUBSCRIBE</a>
+      <div class="lang">🌐 EN ▾</div>
+      <button class="login-btn">LOGIN</button>
+      <button class="menu-toggle" id="menuToggle"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </header>
+
+  <!-- ============ HERO SLIDER ============ -->
+  <section class="hero" id="hero">
+    <div class="hero-slide active" style="background-image:url('https://image.tmdb.org/t/p/original/8YFL5QQVPy3AgrEQxNYVSgiPEbe.jpg')">
+      <div class="hero-overlay">
+        <span class="tag">🔥 Featured</span>
+        <h1>Dune: Part Two</h1>
+        <p>Paul Atreides unites with Chani and the Fremen...</p>
+        <div class="hero-buttons">
+          <button class="btn-play"><i class="fa-solid fa-play"></i> Watch Now</button>
+          <button class="btn-info"><i class="fa-solid fa-circle-info"></i> More Info</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MOVIE ROWS ============ -->
+  <section class="row-section">
+    <div class="row-header">
+      <h2>🎬 NEW MOVIES</h2>
+      <span class="arrow">›</span>
+    </div>
+    <div class="row-scroll" id="newMovies"></div>
+  </section>
+
+  <section class="row-section">
+    <div class="row-header">
+      <h2>🔥 TRENDING NOW</h2>
+      <span class="arrow">›</span>
+    </div>
+    <div class="row-scroll" id="trending"></div>
+  </section>
+
+  <section class="row-section">
+    <div class="row-header">
+      <h2>⭐ TOP RATED</h2>
+      <span class="arrow">›</span>
+    </div>
+    <div class="row-scroll" id="topRated"></div>
+  </section>
+
+  <section class="row-section">
+    <div class="row-header">
+      <h2>⬆️ UPCOMING</h2>
+      <span class="arrow">›</span>
+    </div>
+    <div class="row-scroll" id="upcoming"></div>
+  </section>
+
+  <!-- ============ SEARCH RESULTS ============ -->
+  <section class="row-section" id="searchSection" style="display:none;">
+    <div class="row-header">
+      <h2>🔍 SEARCH RESULTS</h2>
+    </div>
+    <div class="row-scroll" id="searchResults"></div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-col">
+        <div class="logo">Cine<span>Hub</span></div>
+        <p>Your ultimate destination for movies and series.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Browse</h4>
+        <a href="#">Movies</a>
+        <a href="#">TV Shows</a>
+        <a href="#">Trending</a>
+        <a href="#">Top Rated</a>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <a href="#">Help Center</a>
+        <a href="#">Contact Us</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms</a>
+      </div>
+      <div class="footer-col">
+        <h4>Follow</h4>
+        <div class="socials">
+          <a href="#"><i class="fa-brands fa-facebook"></i></a>
+          <a href="#"><i class="fa-brands fa-youtube"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-twitter"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 CineHub. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ============ MODAL ============ -->
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <span class="close" id="closeModal">&times;</span>
+      <img id="modalImg" src="" alt="">
+      <div class="modal-body">
+        <h2 id="modalTitle"></h2>
+        <p id="modalMeta"></p>
+        <p id="modalOverview"></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
