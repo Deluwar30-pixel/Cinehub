@@ -1,6 +1,6 @@
-//  এখানে তোমার TMDB API Key বসাও
+// ⚠️ এখানে তোমার TMDB API Key বসাও
 const API_KEY = 'a107bbfc465784b710cad5b18e174feb';
-const scroll-behavior/asmoothmoviedb.org/3';
+const BASE = 'https://api.themoviedb.org/3';
 const IMG = 'https://image.tmdb.org/t/p/w500';
 const IMG_BIG = 'https://image.tmdb.org/t/p/original';
 
@@ -27,7 +27,6 @@ async function fetchMovies(endpoint, containerId, showExclusive = false) {
     });
   } catch (err) {
     console.error('Error loading:', endpoint, err);
-    container.innerHTML = '<p style="color:#888;padding:20px;">⚠️ ডেটা লোড করা যায়নি। API Key ঠিক আছে কিনা দেখো।</p>';
   }
 }
 
@@ -67,6 +66,7 @@ async function openModal(movie) {
       console.error('Trailer error:', err);
     }
   }
+}
 
 closeModal.addEventListener('click', () => modal.classList.remove('active'));
 modal.addEventListener('click', e => { if (e.target === modal) modal.classList.remove('active'); });
@@ -137,7 +137,7 @@ const heroSlides = [
 ];
 
 const hero = document.getElementById('hero');
-let currentSlide = 0
+let currentSlide = 0;
 
 function createSlides() {
   hero.innerHTML = '';
@@ -168,4 +168,4 @@ function nextSlide() {
 }
 
 createSlides();
-setInterval(nextSlide, 5000);    
+setInterval(nextSlide, 5000);
